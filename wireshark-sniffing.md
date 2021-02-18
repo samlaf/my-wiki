@@ -23,3 +23,9 @@ iwconfig wlan0mon # lists the new interface created
 sudo iwconfig wlan0mon channel 149 # changes channel we are sniffing on
 wireshark # profit
 ```
+
+At the end, just make sure to stop the newly created wireless interface, and to rerun the NetworkManager service (which was killed by airmon-ng)
+```
+sudo airmon-ng stop wlan0mon
+service network-manager start
+```
